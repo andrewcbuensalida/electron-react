@@ -5,12 +5,14 @@ import Client from "./Client";
 import Orders from "./routes/Orders";
 import Products from "./routes/Products";
 import Customers from "./routes/Customers";
+import Login from "./Login";
 
 function App() {
 	return (
 		<div className="App">
 			<header>Yummy Bites</header>
 			<Routes>
+        <Route path="/" element={<Login/>}/>
 				<Route path="/admin" element={<Admin />}>
 					<Route path="" element={<Navigate to="/admin/orders" />} />
 					<Route path="orders" element={<Orders />} />
