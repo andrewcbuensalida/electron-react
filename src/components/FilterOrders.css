@@ -1,0 +1,16 @@
+.FilterOrders_paid_delivered {
+	padding: 0.5em;
+}
+
+#FilterOrders_nameDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#FilterOrders_name {
+	font-size: 1.3rem;
+}
+
+label {
+	margin-right: 10px;
+}

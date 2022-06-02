@@ -1,0 +1,28 @@
+#AddOrder_div{
+    margin: .5em;
+    display: flex;
+    justify-content: center;
+}
+
+#AddOrder_div svg{
+    font-size: 2rem;
+}
+
+.AddOrder_cancel_submit{
+    text-align: center;
+}
+.AddOrder_form > div{
+    margin-bottom: .5em;
+}
+
+.AddOrder_input_div{
+    display: flex;
+}
+
+.AddOrder_input_div > label:first-child{
+    margin-right: auto;
+}
+
+.AddOrder_input_div input{
+    font-size: 1.1rem;
+}

@@ -1,0 +1,13 @@
+.AdminNavbar_link{
+    font-size: 1.4rem;
+    width: 33.33%;
+    border-radius: 0;
+    border: 1px solid orange;
+    background-color: orange;
+    padding: .5em;
+}
+
+.AdminNavbar_selected{
+        background-color: rgb(224, 108, 0);
+
+}

@@ -1,0 +1,11 @@
+.CustomerBody_phone,
+.CustomerBody_address {
+	display: flex;
+    text-align: left;
+}
+
+.CustomerBody_phone svg,
+.CustomerBody_address svg {
+	margin-left: auto;
+    font-size: 3rem;
+}

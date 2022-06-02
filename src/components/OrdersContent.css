@@ -1,0 +1,8 @@
+.OrdersContent_container {
+	text-align: left;
+}
+.OrdersContent_container *{
+    margin-top: 5px;
+	margin-bottom: 0.2em;
+}
+
