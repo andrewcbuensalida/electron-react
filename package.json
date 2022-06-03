@@ -26,7 +26,7 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
+		"test": "nodemon ./AllTests",
 		"eject": "react-scripts eject",
 		"electron:start": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electronmon .\"",
 		"electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",

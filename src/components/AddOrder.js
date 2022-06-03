@@ -23,11 +23,7 @@ const style = {
 	overflowY: "scroll",
 };
 
-function AddOrder({
-	customers,
-	products,
-	setOrders,
-}) {
+function AddOrder({ customers, products, setOrders }) {
 	const [open, setOpen] = useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
@@ -38,7 +34,7 @@ function AddOrder({
 	const [date, setDate] = useState(new Date());
 	const [deliveryAddress, setDeliveryAddress] = useState("");
 	const [items, setItems] = useState([]);
-    
+
 	function changeQuantity(productId, value) {
 		//check if item is already in basket
 		if (items.some((item) => item.productId === productId)) {
@@ -71,10 +67,8 @@ function AddOrder({
 		}
 	}
 	async function submitOrder() {
-        
-        
-        handleClose()
-    }
+		handleClose();
+	}
 	return (
 		<div>
 			<div id="AddOrder_div" onClick={handleOpen}>
@@ -91,8 +85,11 @@ function AddOrder({
 					<form className="AddOrder_form" action="">
 						<h4>New Order</h4>
 						<div className="AddOrder_input_div">
-							<label htmlFor="">First Name:</label>
+							<label htmlFor="AddOrder_firstName">
+								First Name:
+							</label>
 							<input
+								id="AddOrder_firstName"
 								value={firstName}
 								onChange={(e) => setFirstName(e.target.value)}
 								type="text"
@@ -149,6 +146,7 @@ function AddOrder({
 							<label htmlFor="">Items:</label>
 						</div>
 						<Table
+                            id='AddOrder_table'
 							changeQuantity={changeQuantity}
 							type="addOrderProducts"
 							content={products}

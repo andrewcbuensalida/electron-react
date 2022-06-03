@@ -8,7 +8,7 @@ import "./Table.css";
 function Table(props) {
 	return (
 		<div>
-			<table id="Table_table">
+			<table id={props.id} className="Table_table">
 				{props.content.map((oneContent) => (
 					<tr key={oneContent.id} className="Table_oneContent_tr">
 						<div className="Table_oneContent_header">

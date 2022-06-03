@@ -23,9 +23,9 @@ For testing,
 This will start the ChromeDriver. Make sure electron development is running, again with
     npm run electron:start 
 In another terminal, 
-    node AllTests
-to run all tests. To run only one test, go into __test__ folder, then 
-    node <File name of test>
+    npm run test
+to run all tests. To run only one test, 
+    nodemon <File name of test>
 ////////////////////////////////////////////////////
 testing
 https://www.electronjs.org/docs/latest/tutorial/automated-testing

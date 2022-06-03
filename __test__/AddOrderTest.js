@@ -2,6 +2,7 @@ const { Builder, By } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const assert = require("assert");
 
+//This test is unstable, sometimes can't find the increment button, sometimes it can.
 async function test() {
 	const driver = await new Builder()
 		// The "9515" is the port opened by ChromeDriver.
@@ -20,7 +21,7 @@ async function test() {
 	// loading up the app. For some reason the background color is blue.
 	await driver.get("http://localhost:3000");
 
-	//click on customer login button. xpath is probably better.
+	//click on customer login button
 	await driver.findElement(By.id("Login_customerButton")).click();
 
 	const alert = await driver.switchTo().alert();
@@ -36,13 +37,40 @@ async function test() {
 	//click on admin login button
 	await driver.findElement(By.id("Login_adminButton")).click();
 
-	//select navbar links
-	const adminNavbarLinks = await driver.findElements(By.className('AdminNavbar_link'))
+	const adminNavbarLinks = await driver.findElements(
+		By.className("AdminNavbar_link")
+	);
 	//Make sure there's at least 1 admin navbar link
-	assert(adminNavbarLinks.length > 0)
+	assert(adminNavbarLinks.length > 0);
+
+	//click on orders navbar link
+	await driver.findElement(By.id("AdminNavbar_link_orders")).click();
+
+	//click on orders navbar link
+	await driver.findElement(By.id("AddOrder_div")).click();
+
+	const firstNameInput = await driver.findElement(
+		By.id("AddOrder_firstName")
+	);
+	//Type in first name
+	await firstNameInput.sendKeys("Ringo");
+	//check if input contains what you just typed
+	assert.strictEqual(await firstNameInput.getAttribute("value"), "Ringo");
+
+	//find first item
+	const firstItem = await driver.findElement(By.id(`AddOrder_table`));
+
+	//click increment button on first item. Sometimes, it can't find this element.    
+	await firstItem.findElement(By.xpath(`//*[text()='+']`)).click();
+
+	//check if item quantity is now 1
+	assert.strictEqual(
+		(await firstItem.findElement(By.css("strong")).getText())[0],
+		"1"
+	);
 
 	await driver.quit();
-	console.log(`LoginTest passed!`);
+	console.log(`AddOrderTest passed!`);
 }
 
 test();
