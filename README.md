@@ -20,8 +20,12 @@ Make sure yummy bites backend is running too with
 
 For testing, 
     ./node_modules/.bin/chromedriver
-This will start the ChromeDriver. In another terminal,
-    nodemon test
+This will start the ChromeDriver. Make sure electron development is running, again with
+    npm run electron:start 
+In another terminal, 
+    node AllTests
+to run all tests. To run only one test, go into __test__ folder, then 
+    node <File name of test>
 ////////////////////////////////////////////////////
 testing
 https://www.electronjs.org/docs/latest/tutorial/automated-testing

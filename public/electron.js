@@ -10,8 +10,9 @@ function createWindow() {
 		// to put it in the correct screen during development
 		x: !app.isPackaged && 1700,
 		y: !app.isPackaged && 100,
-		width: 800,
-		height: 600,
+    fullscreen:true,
+		// width: 1000,
+		// height: 800,
 		// Set the path of an additional "preload" script that can be used to
 		// communicate between node-land and browser-land.
 		webPreferences: {
@@ -34,7 +35,7 @@ function createWindow() {
 				slashes: true,
 		  })
 		: "http://localhost:3000";
-	mainWindow.loadURL(appURL);
+	mainWindow.loadURL(appURL)
 
 	// Automatically open Chrome's DevTools in development mode.
 	if (!app.isPackaged) {
