@@ -18,14 +18,17 @@ This will yarn build which will build the build folder, then execute electron-bu
 Make sure yummy bites backend is running too with
     nodemon
 
-For testing, 
+For e2e testing, 
     ./node_modules/.bin/chromedriver
 This will start the ChromeDriver. Make sure electron development is running, again with
     npm run electron:start 
 In another terminal, 
-    npm run test
+    npm run e2e-test
 to run all tests. To run only one test, 
     nodemon <File name of test>
+
+For unit testing,
+    npm run unit-test
 ////////////////////////////////////////////////////
 testing
 https://www.electronjs.org/docs/latest/tutorial/automated-testing
