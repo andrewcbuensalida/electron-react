@@ -2,7 +2,7 @@ const { Builder, By } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const assert = require("assert");
 
-//This test is unstable, sometimes can't find the increment button, sometimes it can.
+//This test is unstable, sometimes can't find the increment button, sometimes it can. For some reason, expect (aka jest) doesn't work here, but assert does. The difference of find
 async function test() {
 	const driver = await new Builder()
 		// The "9515" is the port opened by ChromeDriver.
@@ -17,6 +17,9 @@ async function test() {
 		// comment this out to not go headless
 		.setChromeOptions(new chrome.Options().headless())
 		.build();
+
+	// This is implicit wait. The other is explicit. Shouldn't mix. Implicit wait seems easier since I just need to add this line.
+	await driver.manage().setTimeouts({ implicit: 10000 });
 
 	// loading up the app. For some reason the background color is blue.
 	await driver.get("http://localhost:3000");
@@ -60,7 +63,7 @@ async function test() {
 	//find first item
 	const firstItem = await driver.findElement(By.id(`AddOrder_table`));
 
-	//click increment button on first item. Sometimes, it can't find this element.    
+	//click increment button on first item. Sometimes, it can't find this element.
 	await firstItem.findElement(By.xpath(`//*[text()='+']`)).click();
 
 	//check if item quantity is now 1

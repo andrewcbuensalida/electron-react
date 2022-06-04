@@ -15,12 +15,12 @@ const mockProducts = [
 test("Increments item quantity", () => {
 	render(<AddOrder products={mockProducts} />);
 
-    //Click add order button to open modal
+	//Click add order button to open modal. The difference of get, find, query, is get errors if it can't find it, find returns a rejected promise, query returns null.
 	userEvent.click(screen.getByText(`Add Order`));
 
-    //click increment button
+	//click increment button
 	userEvent.click(screen.getByText(`+`));
 
-    //check if the new quantity of the item is 1
+	//check if the new quantity of the item is 1
 	expect(screen.getByText(/1./).textContent).toContain(`1`);
 });
