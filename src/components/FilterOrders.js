@@ -25,7 +25,7 @@ function FilterOrders({
 	return (
 		<div className="FilterOrders_container">
 			<div className="FilterOrders_paid_delivered">
-				<label>Show all</label>
+				<label >Show all</label>
 				<Checkbox isToggled={isPending} setIsToggled={setIsPending} />
 				<label>Pending</label>
 			</div>

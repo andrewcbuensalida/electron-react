@@ -6,7 +6,7 @@ function Checkbox({
 	isToggled,
 }) {
 	return (
-		<label className="switch">
+		<label className="switch" htmlFor="isPendingCheckbox">
 			<input
 				type="checkbox"
 				id="isPendingCheckbox"

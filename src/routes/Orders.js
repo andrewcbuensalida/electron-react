@@ -14,6 +14,7 @@ const Orders = () => {
 		customers,
 		products,
 	} = useOutletContext();
+    
 
 	useEffect(() => {
 		//combining orders with customers with products
@@ -21,7 +22,7 @@ const Orders = () => {
 			orders.map((order) => {
 				const customer = customers.find(
 					(customer) => customer.id === order.customerId
-          // need to have as ICustomer to tell typescript that I know there has to be a customer, dont worry
+          
 				);
 				const itemsWithProducts = order.items.map((item) => {
 					const product = products.find(
