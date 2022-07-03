@@ -1,4 +1,4 @@
-import AddOrder from "./AddOrder";
+import AddOrder from "../AddOrder";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 

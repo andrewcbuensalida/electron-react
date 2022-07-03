@@ -15,7 +15,7 @@ When finished,
     npm electron:package:win
 This will yarn build which will build the build folder, then execute electron-builder which will build the dist folder from the based on the build folder.
 
-Make sure yummy bites backend is running too with
+Make sure yummy bites backend is running too with in yummy-bites-react-node-express-postgress-NOT-TYPESCRIPT
     nodemon
 
 For e2e testing, 
@@ -26,7 +26,7 @@ In another terminal,
     npm run e2e-test
 to run all tests. To run only one test, 
     nodemon <File name of test>
-
+ 
 For unit testing,
     npm run unit-test
 ////////////////////////////////////////////////////
@@ -35,4 +35,4 @@ https://www.electronjs.org/docs/latest/tutorial/automated-testing
 
 //////////////////////////////////////
 https://thewebdev.info/2022/03/08/how-to-use-react-router-with-electron/
-Have to use HashRouter instead of BrowserRouter for React Router because electron uses file based thing instead of browser.
+Have to use HashRouter instead of BrowserRouter for React Router because electron uses file based thing instead of browser...

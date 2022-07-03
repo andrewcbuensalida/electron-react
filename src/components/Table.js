@@ -51,7 +51,7 @@ function Table(props) {
 												1
 											)
 										}
-										content="+"
+										content='+'
 									/>
 								</div>
 							) : (

@@ -3,7 +3,7 @@ const exec = require("child_process").exec;
 
 const async = require("async"); // npm install async
 
-const scriptsFolder = "./__test__/"; // add your scripts to folder named scripts
+const scriptsFolder = "./__tests__/"; // add your scripts to folder named this
 
 const files = fs.readdirSync(scriptsFolder); // reading files from folders
 const funcs = files.map(function (file) {
