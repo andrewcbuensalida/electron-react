@@ -11,7 +11,7 @@ wait-on: Utility to wait for files, ports, sockets, etc. We’ll use it to wait 
 workflow
 Make sure yummy bites backend is running too with in yummy-bites-react-node-express-postgress-NOT-TYPESCRIPT
     nodemon
-    
+
 When developing, this will live reload and open an electron window
     npm run electron:start 
 When finished,
@@ -43,7 +43,7 @@ silent means no logs. For logs,
     npm run unitTest
 and then for coverage, run this after running unit tests
     npm run coverage
-
+could press w for more options, then p to filter by filename to make tests faster
 
 
 ////////////////////////////////////////////////////

@@ -1,19 +1,22 @@
 import Orders from "../Orders";
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import React from 'react'
-import OrdersContent from '../../components/OrdersContent'
+// enzyme basically loads react components, and not it's children
+import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+configure({ adapter: new Adapter() });
 
 afterEach(() => {
 	jest.resetAllMocks();
 });
 
+//this mocks the whole react-router-dom module. All things exported will be turned into jest.Mock unless specified in the return of the callback. jest.fn() mocks a function. jest.spyOn() mocks a module or a function. advantage of spyOn is you can mockRestore which removes the mock and uses the original.
 jest.mock("react-router-dom", () => {
 	// Require the original module to not be mocked...
 	const originalModule = jest.requireActual("react-router-dom");
 
 	return {
 		__esModule: true,
+		//all other parts of react-router-dom are retained except useOutletContext
 		...originalModule,
 		useOutletContext: () => ({
 			orders: [
@@ -98,10 +101,18 @@ jest.mock("react-router-dom", () => {
 // 	format: jest.fn().mockReturnValue("your date"),
 // }));
 
+// this also makes it hang
+// jest.mock("../../components/OrdersContent", () => (props) => <div>hello</div>);
+// jest.mock("../../components/Table", () => (props) => <div>hello</div>);
+// jest.mock("../../components/FilterOrders", () => (props) => <div>hello</div>);
+
+// This doesnt make it hang
+// jest.mock("../../components/AddOrder", () => (props) => <div>hello</div>);
 
 test("Pending button only shows pending orders", () => {
-    render(<Orders />);
+    //i guess calling shallow already tests if it renders
+	let wrapper = shallow(<Orders />);
 
-	// expect(screen.getByText(/Pending/i)).not.toContain(/No/i);
-    expect(true).toBe(true)
+    // should expect wrapper.find... to something
+	expect(true).toBe(true);
 });
