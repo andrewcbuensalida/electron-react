@@ -15,7 +15,8 @@ jest.mock("react-router-dom", () => ({
 
 test("Renders App Component", () => {
 	render(
-		<MemoryRouter>
+        // using regular Router won't work because it will go to the routes, which will load the child, unless you intend to test those routes. initialEntries is the history stack
+		<MemoryRouter initialEntries={['/']}>
 			<App />
 		</MemoryRouter>
 	);

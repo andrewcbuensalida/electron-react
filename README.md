@@ -9,14 +9,15 @@ wait-on: Utility to wait for files, ports, sockets, etc. We’ll use it to wait 
 
 /////////////////////////////////////////////////////
 workflow
-When developing, this will live reload,
+Make sure yummy bites backend is running too with in yummy-bites-react-node-express-postgress-NOT-TYPESCRIPT
+    nodemon
+    
+When developing, this will live reload and open an electron window
     npm run electron:start 
 When finished,
     npm electron:package:win
 This will yarn build which will build the build folder, then execute electron-builder which will build the dist folder from the based on the build folder.
 
-Make sure yummy bites backend is running too with in yummy-bites-react-node-express-postgress-NOT-TYPESCRIPT
-    nodemon
 
 For e2e testing, 
     ./node_modules/.bin/chromedriver
@@ -27,13 +28,22 @@ In another terminal,
 to run all tests. To run only one test, 
     nodemon <File name of test>
  
+DEPRECATED 
 For unit testing,
     npm run unit-test
-This will run the script
+This will run the script 
     "unit-test": "concurrently \"react-scripts test --watchAll --coverage --silent\" \"cd coverage && cd lcov-report && live-server --quiet\"",
 Note: have to put --watchAll because if not, coverage will be 0%
 --silent is for hiding console.logs of jest
 live-server opens the generated coverage html gui, --quiet suppresses logs. Concurrently is to run both react-scripts-test and live-server at the same time. Sometimes have to manually save the test in order for it to watch properly.
+
+For unit testing,
+    npm run unitTestSilent
+silent means no logs. For logs,
+    npm run unitTest
+and then for coverage, run this after running unit tests
+    npm run coverage
+
 
 
 ////////////////////////////////////////////////////

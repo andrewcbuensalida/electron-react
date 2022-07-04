@@ -27,7 +27,9 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"unit-test": "concurrently \"react-scripts test --watchAll --coverage --silent\" \"cd coverage && cd lcov-report && live-server --quiet\"",
+		"unitTestSilent": "react-scripts test --watchAll --coverage --silent", 
+        "unitTest":"react-scripts test --watchAll --coverage",
+        "coverage":"cd coverage && cd lcov-report && live-server --quiet",
 		"e2e-test": "nodemon ./E2ETests",
 		"eject": "react-scripts eject",
 		"electron:start": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electronmon .\"",
