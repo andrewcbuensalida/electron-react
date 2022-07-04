@@ -33,7 +33,7 @@ This will run the script
     "unit-test": "concurrently \"react-scripts test --watchAll --coverage --silent\" \"cd coverage && cd lcov-report && live-server --quiet\"",
 Note: have to put --watchAll because if not, coverage will be 0%
 --silent is for hiding console.logs of jest
-live-server opens the generated coverage html gui, --quiet suppresses logs. Concurrently is to run both react-scripts-test and live-server at the same time.
+live-server opens the generated coverage html gui, --quiet suppresses logs. Concurrently is to run both react-scripts-test and live-server at the same time. Sometimes have to manually save the test in order for it to watch properly.
 
 
 ////////////////////////////////////////////////////

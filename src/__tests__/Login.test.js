@@ -26,5 +26,13 @@ test("handles customer login", () => {
 	render(<Login />);
     // doesn't have to be in an expect to make it fail. If it doesn't find the element with getByRole, it will fail the test.
 	userEvent.click(screen.getByRole("button", { name: /Customer/ }));
+
+    //this should check if the alert pops up instead
 	expect(screen.queryByText(/Login/, { exact: false })).toBeInTheDocument();
 });
+
+test("handles admin login", () => {
+	render(<Login />);
+	userEvent.click(screen.getByRole("button", { name: /Admin/ }));
+});
+
