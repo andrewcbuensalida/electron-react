@@ -17,6 +17,7 @@
 		"@testing-library/user-event": "^13.5.0",
 		"async": "^3.2.3",
 		"date-fns": "^2.28.0",
+		"jest": "^28.1.2",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
 		"react-router-dom": "^6.3.0",
@@ -26,7 +27,7 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"unit-test": "react-scripts test --coverage",
+		"unit-test": "concurrently \"react-scripts test --watchAll --coverage --silent\" \"cd coverage && cd lcov-report && live-server --quiet\"",
 		"e2e-test": "nodemon ./E2ETests",
 		"eject": "react-scripts eject",
 		"electron:start": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electronmon .\"",
@@ -55,6 +56,7 @@
 		"electron-builder": "^23.0.3",
 		"electron-chromedriver": "^19.0.0",
 		"electronmon": "^2.0.2",
+		"live-server": "^1.2.2",
 		"selenium-webdriver": "^4.2.0",
 		"wait-on": "^6.0.1"
 	},
