@@ -45,6 +45,10 @@ and then for coverage, run this after running unit tests
     npm run coverage
 could press w for more options, then p to filter by filename to make tests faster
 
+OR
+
+npm test LinkedEventsForm.test.tsx -- --coverage --collectCoverageOnlyFrom=src\components\encounter\LinkedEventsForm\index.tsx --watch
+
 
 ////////////////////////////////////////////////////
 testing
